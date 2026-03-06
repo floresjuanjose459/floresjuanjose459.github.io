@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm - Despacho de Abogados</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#1d1918', // Marrón oscuro/carbón (Reemplaza al azul marino)
+                            800: '#2b2624', // Marrón medio oscuro
+                            700: '#3a3331', // Marrón oscuro claro
+                        },
+                        customBlue: {
+                            900: '#1d2d3e', // Azul oscuro extraído de tu imagen
+                            800: '#263b52', 
+                        },
+                        gold: {
+                            500: '#834b61', // Rosado oscuro casi violeta (Acento)
+                            600: '#69394c', // Versión más oscura para hover
+                        },
+                        burgundy: '#70354b' // Tono violeta/vino para nombres de abogados
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos adicionales para efectos sutiles */
+        .bg-hero-pattern {
+            background-image: linear-gradient(to right, rgba(29, 45, 62, 0.95) 0%, rgba(29, 45, 62, 0.7) 100%), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-cta-pattern {
+            background-image: linear-gradient(rgba(29, 45, 62, 0.85), rgba(29, 45, 62, 0.85)), url('https://images.unsplash.com/photo-1505664173691-a2816a3e5f54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center fixed;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-gray-50">
+
+    <!-- BARRA SUPERIOR (Top Bar) -->
+    <div class="bg-customBlue-900 text-gray-300 text-xs py-2 border-b border-gray-700 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fas fa-phone-alt text-gold-500 mr-2"></i> +1 234 567 8900</span>
+                <span><i class="fas fa-envelope text-gold-500 mr-2"></i> info@lawfirm.com</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-gold-500 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-gold-500 transition"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN (Navbar) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <i class="fas fa-balance-scale text-gold-500 text-3xl mr-2"></i>
+                <div>
+                    <h1 class="font-serif text-xl font-bold text-navy-900 tracking-wider">LAWFIRM</h1>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest -mt-1">Attorneys at Law</p>
+                </div>
+            </div>
+            <!-- Menú -->
+            <ul class="hidden md:flex space-x-8 text-sm font-semibold text-navy-900">
+                <li><a href="#inicio" class="text-gold-500">INICIO</a></li>
+                <li><a href="#nosotros" class="hover:text-gold-500 transition">NOSOTROS</a></li>
+                <li><a href="#servicios" class="hover:text-gold-500 transition">SERVICIOS</a></li>
+                <li><a href="#testimonios" class="hover:text-gold-500 transition">TESTIMONIOS</a></li>
+                <li><a href="#equipo" class="hover:text-gold-500 transition">NUESTRO EQUIPO</a></li>
+                <li><a href="#contacto" class="hover:text-gold-500 transition">CONTACTO</a></li>
+                <li><a href="#" class="hover:text-gold-500 transition"><i class="fas fa-search"></i></a></li>
+            </ul>
+            <!-- Botón Móvil -->
+            <button class="md:hidden text-navy-900 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO -->
+    <header id="inicio" class="bg-hero-pattern text-white py-24 md:py-32 lg:py-48">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl">
+                <p class="text-gold-500 font-bold uppercase tracking-widest text-sm mb-4">Bienvenidos a LawFirm</p>
+                <h2 class="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6">El Bufete de Abogados Más Exitoso</h2>
+                <p class="text-gray-300 mb-8 max-w-lg leading-relaxed">Proporcionamos representación legal de primer nivel con un historial comprobado de éxito. Dedicados a proteger sus derechos y asegurar su futuro.</p>
+                <a href="#" class="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 font-semibold text-sm uppercase tracking-wider transition">Contáctenos Ahora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN NUESTRA PROMESA -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10 relative">
+                <!-- Imagen del abogado con un fondo decorativo sutil -->
+                <div class="absolute inset-0 bg-navy-900 w-3/4 h-full transform translate-x-4 translate-y-4 -z-10"></div>
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Abogado Principal" class="w-full h-auto shadow-lg z-10 relative">
+            </div>
+            <div class="md:w-1/2 md:pl-10">
+                <h3 class="font-serif text-3xl md:text-4xl text-navy-900 font-bold mb-6">¡Nuestra Promesa!</h3>
+                <h4 class="text-gold-500 font-serif text-xl italic mb-4">Ofrecemos asesoría legal con integridad y pasión.</h4>
+                <p class="text-gray-600 mb-6 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut elit non libero scelerisque vehicula. Nullam in urna a orci elementum facilisis. Nunc at magna et tellus viverra varius ut in neque. Integer pellentesque tristique mi vel mollis.</p>
+                <p class="text-gray-600 mb-8 leading-relaxed">Praesent lacinia tristique commodo. Suspendisse pulvinar, ligula ut tristique condimentum, lorem augue fringilla nunc, at feugiat justo leo at ligula.</p>
+                <!-- Firma -->
+                <div class="mt-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/John_Hancock_Signature.svg" alt="Firma" class="h-12 opacity-70 mb-2">
+                    <p class="font-bold text-navy-900">John Doe, <span class="text-sm font-normal text-gray-500">Socio Fundador</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE ESTADÍSTICAS -->
+    <section class="bg-navy-900 py-12 border-y border-gold-500 border-opacity-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-700">
+                <div class="p-4">
+                    <i class="fas fa-balance-scale text-gold-500 text-4xl mb-4"></i>
+                    <h4 class="font-serif text-4xl text-white font-bold mb-2">152</h4>
+                    <p class="text-gray-400 uppercase tracking-widest text-xs">Casos Ganados</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-gavel text-gold-500 text-4xl mb-4"></i>
+                    <h4 class="font-serif text-4xl text-white font-bold mb-2">312</h4>
+                    <p class="text-gray-400 uppercase tracking-widest text-xs">Casos Totales</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-users text-gold-500 text-4xl mb-4"></i>
+                    <h4 class="font-serif text-4xl text-white font-bold mb-2">513</h4>
+                    <p class="text-gray-400 uppercase tracking-widest text-xs">Clientes Felices</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-briefcase text-gold-500 text-4xl mb-4"></i>
+                    <h4 class="font-serif text-4xl text-white font-bold mb-2">25</h4>
+                    <p class="text-gray-400 uppercase tracking-widest text-xs">Años de Exp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ÁREAS DE PRÁCTICA -->
+    <section id="servicios" class="py-20 bg-gray-50 text-center">
+        <div class="container mx-auto px-4">
+            <h3 class="font-serif text-4xl text-navy-900 font-bold mb-4">Áreas de Práctica Legal</h3>
+            <div class="flex items-center justify-center mb-12">
+                <div class="w-12 h-px bg-gold-500"></div>
+                <i class="fas fa-gavel text-gold-500 mx-4"></i>
+                <div class="w-12 h-px bg-gold-500"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Tarjeta 1 -->
+                <div class="bg-navy-800 text-white p-10 hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-fire text-gold-500 text-4xl mb-6"></i>
+                    <h4 class="font-serif text-xl font-bold mb-4">Derecho Penal</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Defensa agresiva y estratégica para proteger sus libertades y derechos constitucionales en todo momento.</p>
+                </div>
+                <!-- Tarjeta 2 (Dorado) -->
+                <div class="bg-navy-800 text-white p-10 hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-car-crash text-gold-500 text-4xl mb-6"></i>
+                    <h4 class="font-serif text-xl font-bold mb-4">Lesiones Personales</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Buscamos la máxima compensación por accidentes, negligencia médica y daños sufridos en el trabajo.</p>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="bg-navy-800 text-white p-10 hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-users text-gold-500 text-4xl mb-6"></i>
+                    <h4 class="font-serif text-xl font-bold mb-4">Derecho Familiar</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Asesoría compasiva en divorcios, custodia de menores, adopciones y acuerdos prenupciales.</p>
+                </div>
+                <!-- Tarjeta 4 -->
+                <div class="bg-navy-800 text-white p-10 hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-chart-line text-gold-500 text-4xl mb-6"></i>
+                    <h4 class="font-serif text-xl font-bold mb-4">Derecho Corporativo</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Apoyo legal integral para empresas, desde su formación, contratos, hasta litigios comerciales complejos.</p>
+                </div>
+                <!-- Tarjeta 5 -->
+                <div class="bg-navy-800 text-white p-10 hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-leaf text-gold-500 text-4xl mb-6"></i>
+                    <h4 class="font-serif text-xl font-bold mb-4">Medio Ambiente</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Protección legal en cumplimiento de normativas ambientales y disputas relacionadas con el entorno natural.</p>
+                </div>
+                <!-- Tarjeta 6 -->
+                <div class="bg-navy-800 text-white p-10 hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-home text-gold-500 text-4xl mb-6"></i>
+                    <h4 class="font-serif text-xl font-bold mb-4">Bienes Raíces</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Representación en transacciones inmobiliarias, disputas de propiedad, contratos de arrendamiento y zonificación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section id="testimonios" class="bg-navy-900 py-20 bg-hero-pattern relative">
+        <!-- Overlay para oscurecer -->
+        <div class="absolute inset-0 bg-navy-900 opacity-90"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h3 class="font-serif text-4xl text-white font-bold mb-4">Lo Que Dicen Los Clientes</h3>
+            <div class="flex items-center justify-center mb-16">
+                <div class="w-12 h-px bg-gold-500"></div>
+                <i class="fas fa-quote-right text-gold-500 mx-4"></i>
+                <div class="w-12 h-px bg-gold-500"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto text-left">
+                <!-- Testimonio 1 -->
+                <div>
+                    <i class="fas fa-quote-left text-gold-500 text-3xl mb-4"></i>
+                    <p class="text-gray-300 italic mb-6">"Su nivel de profesionalismo y atención al detalle es inigualable. Me guiaron a través de un caso muy complejo con paciencia y me consiguieron el mejor resultado posible."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Cliente" class="w-12 h-12 rounded-full mr-4 border-2 border-gold-500 object-cover">
+                        <div>
+                            <h5 class="text-white font-bold text-sm">David Martínez</h5>
+                            <span class="text-gold-500 text-xs">CEO, Empresa Tech</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonio 2 -->
+                <div>
+                    <i class="fas fa-quote-left text-gold-500 text-3xl mb-4"></i>
+                    <p class="text-gray-300 italic mb-6">"Enfrentar un juicio es aterrador, pero el equipo legal estuvo conmigo en cada paso. Sentí que mis problemas eran los suyos. Altamente recomendados por su ética y resultados."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Cliente" class="w-12 h-12 rounded-full mr-4 border-2 border-gold-500 object-cover">
+                        <div>
+                            <h5 class="text-white font-bold text-sm">Laura Fernández</h5>
+                            <span class="text-gold-500 text-xs">Dueña de Negocio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CLIENTES LOGOS -->
+    <section class="bg-navy-800 border-y border-gray-700 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
+                <!-- Usando iconos genéricos de font-awesome como logos de relleno -->
+                <div class="text-white flex items-center space-x-2 text-2xl font-serif font-bold"><i class="fab fa-avianex text-3xl"></i><span>Logosum</span></div>
+                <div class="text-white flex items-center space-x-2 text-2xl font-serif font-bold"><i class="fab fa-houzz text-3xl"></i><span>Logosum</span></div>
+                <div class="text-white flex items-center space-x-2 text-2xl font-serif font-bold"><i class="fab fa-studiovinari text-3xl"></i><span>Logosum</span></div>
+                <div class="text-white flex items-center space-x-2 text-2xl font-serif font-bold"><i class="fab fa-typo3 text-3xl"></i><span>Logosum</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NUESTROS ABOGADOS (REDISEÑADA SEGÚN LA IMAGEN 2) -->
+    <section id="equipo" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <!-- Título original de la imagen 1 adaptado -->
+            <div class="text-center mb-12">
+                <h3 class="font-serif text-4xl text-navy-900 font-bold mb-4">Conozca a Nuestros Abogados</h3>
+                <div class="flex items-center justify-center mb-12">
+                    <div class="w-12 h-px bg-gold-500"></div>
+                    <i class="fas fa-users text-gold-500 mx-4"></i>
+                    <div class="w-12 h-px bg-gold-500"></div>
+                </div>
+            </div>
+
+            <!-- Estructura exacta basada en la imagen 2 proporcionada -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                <!-- Abogado 1 -->
+                <div class="bg-white shadow-sm flex flex-row overflow-hidden border border-gray-200 hover:shadow-md transition">
+                    <!-- Foto Izquierda -->
+                    <div class="w-1/3 min-w-[140px] md:min-w-[180px]">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Manuel Abascal" class="w-full h-full object-cover object-top">
+                    </div>
+                    <!-- Datos Derecha -->
+                    <div class="p-6 flex flex-col justify-center flex-1">
+                        <h4 class="text-burgundy font-serif font-bold text-lg md:text-xl mb-1">Manuel (Manny) A. Abascal</h4>
+                        <span class="text-gray-500 text-sm mb-4">Partner</span>
+                        <div class="text-gray-700 text-sm space-y-1">
+                            <p>Los Angeles</p>
+                            <p><a href="mailto:manny.abascal@lw.com" class="hover:text-burgundy transition">manny.abascal@lw.com</a></p>
+                            <p>+1.213.891.7889</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abogado 2 -->
+                <div class="bg-white shadow-sm flex flex-row overflow-hidden border border-gray-200 hover:shadow-md transition">
+                    <div class="w-1/3 min-w-[140px] md:min-w-[180px]">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Douglas Abernethy" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-1">
+                        <h4 class="text-burgundy font-serif font-bold text-lg md:text-xl mb-1">Douglas Abernethy</h4>
+                        <span class="text-gray-500 text-sm mb-4">Partner</span>
+                        <div class="text-gray-700 text-sm space-y-1">
+                            <p>London</p>
+                            <p><a href="mailto:douglas.abernethy@lw.com" class="hover:text-burgundy transition">douglas.abernethy@lw.com</a></p>
+                            <p>+44.20.7710.1000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abogado 3 -->
+                <div class="bg-white shadow-sm flex flex-row overflow-hidden border border-gray-200 hover:shadow-md transition">
+                    <div class="w-1/3 min-w-[140px] md:min-w-[180px]">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Stephanie Adams" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-1">
+                        <h4 class="text-burgundy font-serif font-bold text-lg md:text-xl mb-1">Stephanie Adams</h4>
+                        <span class="text-gray-500 text-sm mb-4">Partner</span>
+                        <div class="text-gray-700 text-sm space-y-1">
+                            <p>London</p>
+                            <p><a href="mailto:stephanie.adams@lw.com" class="hover:text-burgundy transition">stephanie.adams@lw.com</a></p>
+                            <p>+44.20.7710.4518</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abogado 4 -->
+                <div class="bg-white shadow-sm flex flex-row overflow-hidden border border-gray-200 hover:shadow-md transition">
+                    <div class="w-1/3 min-w-[140px] md:min-w-[180px]">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nathan Ajiashvili" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-1">
+                        <h4 class="text-burgundy font-serif font-bold text-lg md:text-xl mb-1">Nathan Ajiashvili</h4>
+                        <span class="text-gray-500 text-sm mb-4">Partner</span>
+                        <div class="text-gray-700 text-sm space-y-1">
+                            <p>New York</p>
+                            <p><a href="mailto:nathan.ajiashvili@lw.com" class="hover:text-burgundy transition">nathan.ajiashvili@lw.com</a></p>
+                            <p>+1.212.906.2916</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abogado 5 -->
+                <div class="bg-white shadow-sm flex flex-row overflow-hidden border border-gray-200 hover:shadow-md transition">
+                    <div class="w-1/3 min-w-[140px] md:min-w-[180px]">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hamad M. Al-Hoshan" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-1">
+                        <h4 class="text-burgundy font-serif font-bold text-lg md:text-xl mb-1">Hamad M. Al-Hoshan</h4>
+                        <span class="text-gray-500 text-sm mb-4">Partner</span>
+                        <div class="text-gray-700 text-sm space-y-1">
+                            <p>New York</p>
+                            <p><a href="mailto:hamad.al-hoshan@lw.com" class="hover:text-burgundy transition">hamad.al-hoshan@lw.com</a></p>
+                            <p>+1.212.906.1210</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abogado 6 -->
+                <div class="bg-white shadow-sm flex flex-row overflow-hidden border border-gray-200 hover:shadow-md transition">
+                    <div class="w-1/3 min-w-[140px] md:min-w-[180px]">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Basil Al-Jafari" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-1">
+                        <h4 class="text-burgundy font-serif font-bold text-lg md:text-xl mb-1">Basil Al-Jafari</h4>
+                        <span class="text-gray-500 text-sm mb-4">Partner</span>
+                        <div class="text-gray-700 text-sm space-y-1">
+                            <p>Riyadh</p>
+                            <p><a href="mailto:basil.aljafari@lw.com" class="hover:text-burgundy transition">basil.aljafari@lw.com</a></p>
+                            <p>+966.11.207.2500</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CALL TO ACTION Y NEWSLETTER (COMBINADA) -->
+    <section id="contacto" class="bg-cta-pattern py-20 relative text-white">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-customBlue-900 bg-opacity-80 p-8 md:p-12 rounded-sm border border-gray-600 backdrop-blur-sm shadow-2xl">
+                
+                <!-- Parte de Contacto / Cita -->
+                <div class="text-center lg:text-left border-b lg:border-b-0 lg:border-r border-gray-500 pb-8 lg:pb-0 lg:pr-12">
+                    <h3 class="font-serif text-3xl md:text-4xl font-bold mb-2">¿Necesita Consejo de Abogados Expertos?</h3>
+                    <h4 class="font-serif text-xl md:text-2xl font-bold text-gold-500 mb-6">¡Obtenga una Cita Hoy!</h4>
+                    
+                    <div class="flex items-center justify-center lg:justify-start text-2xl md:text-3xl font-bold mb-6">
+                        <i class="fas fa-phone-alt text-gold-500 mr-4"></i>
+                        <span>(020) 650-88897</span>
+                    </div>
+                    
+                    <div class="text-sm text-gray-300 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6">
+                        <p><i class="fas fa-envelope mr-2 text-gold-500"></i> info@lawfirm.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-gold-500"></i> 123 Av. Justicia</p>
+                    </div>
+                </div>
+
+                <!-- Parte de Newsletter -->
+                <div class="text-center lg:text-left lg:pl-6">
+                    <h4 class="font-serif text-2xl md:text-3xl font-bold mb-3">Únase a nuestra lista para estar en contacto</h4>
+                    <p class="text-gray-300 text-sm mb-8">Reciba actualizaciones legales y noticias importantes directamente en su correo.</p>
+                    
+                    <div class="flex flex-col sm:flex-row w-full gap-0 shadow-lg">
+                        <input type="email" placeholder="Su correo electrónico" class="px-6 py-4 w-full text-gray-800 focus:outline-none rounded-t-sm sm:rounded-l-sm sm:rounded-tr-none">
+                        <button class="bg-gold-500 hover:bg-gold-600 px-8 py-4 font-bold uppercase text-xs tracking-wider transition whitespace-nowrap rounded-b-sm sm:rounded-r-sm sm:rounded-bl-none text-white">Suscribirse</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ÚLTIMAS NOTICIAS -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h3 class="font-serif text-4xl text-navy-900 font-bold mb-4">Últimas Noticias</h3>
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-px bg-gold-500"></div>
+                    <i class="fas fa-newspaper text-gold-500 mx-4"></i>
+                    <div class="w-12 h-px bg-gold-500"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Noticia 1 -->
+                <div class="bg-gray-50 border border-gray-100 group cursor-pointer">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Contrato legal" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                            <span><i class="fas fa-user text-gold-500 mr-1"></i> Por Admin</span>
+                            <span><i class="fas fa-calendar-alt text-gold-500 mr-1"></i> 15 Oct, 2023</span>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-500 transition">Por qué las inversiones legales son seguras</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Entienda la importancia de invertir en protección legal temprana para evitar costosos litigios en el futuro.</p>
+                        <a href="#" class="text-gold-500 font-bold text-xs uppercase tracking-wider hover:text-navy-900 transition">Leer Más <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <!-- Noticia 2 -->
+                <div class="bg-gray-50 border border-gray-100 group cursor-pointer">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Estatua justicia" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                            <span><i class="fas fa-user text-gold-500 mr-1"></i> Por John Doe</span>
+                            <span><i class="fas fa-calendar-alt text-gold-500 mr-1"></i> 10 Oct, 2023</span>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-500 transition">Derechos laborales que debes conocer</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Una revisión completa sobre las actualizaciones más recientes en los estatutos de derechos de los trabajadores.</p>
+                        <a href="#" class="text-gold-500 font-bold text-xs uppercase tracking-wider hover:text-navy-900 transition">Leer Más <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <!-- Noticia 3 -->
+                <div class="bg-gray-50 border border-gray-100 group cursor-pointer">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Reunión" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                            <span><i class="fas fa-user text-gold-500 mr-1"></i> Por Mary Smith</span>
+                            <span><i class="fas fa-calendar-alt text-gold-500 mr-1"></i> 05 Oct, 2023</span>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-500 transition">Cómo prepararse para un proceso familiar</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Consejos esenciales y documentación necesaria antes de iniciar cualquier tipo de proceso en el juzgado de familia.</p>
+                        <a href="#" class="text-gold-500 font-bold text-xs uppercase tracking-wider hover:text-navy-900 transition">Leer Más <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / PIE DE PÁGINA -->
+    <footer class="bg-navy-900 text-white pt-16">
+        <!-- Contenido principal del footer -->
+        <div class="container mx-auto px-4 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Columna 1: Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-balance-scale text-gold-500 text-3xl mr-2"></i>
+                        <div>
+                            <h2 class="font-serif text-xl font-bold tracking-wider">LAWFIRM</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center hover:bg-gold-500 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center hover:bg-gold-500 transition"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Contacto -->
+                <div>
+                    <h4 class="font-serif text-xl font-bold mb-6 relative inline-block">Contacto
+                        <span class="absolute bottom--2 left-0 w-1/2 h-0.5 bg-gold-500"></span>
+                    </h4>
+                    <ul class="text-gray-400 text-sm space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold-500 mt-1 mr-3"></i>
+                            <span>123 Avenida de la Justicia, Edificio Central, Piso 4.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gold-500 mr-3"></i>
+                            <span>(020) 650-88897</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gold-500 mr-3"></i>
+                            <span>info@lawfirm.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra inferior / Copyright -->
+        <div class="bg-navy-900 border-t border-gray-800 py-4 text-center">
+            <p class="text-gray-500 text-xs">&copy; 2026 LawFirm. Todos los derechos reservados. Diseñado en un solo archivo.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
