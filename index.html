@@ -43,7 +43,8 @@
     <style>
         /* Estilos adicionales para efectos sutiles */
         .bg-hero-pattern {
-            background-image: linear-gradient(to right, rgba(29, 45, 62, 0.95) 0%, rgba(29, 45, 62, 0.7) 100%), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            /* CAMBIO 1: Aquí se cambia la imagen de fondo por tu archivo JPEG local */
+            background-image: linear-gradient(to right, rgba(29, 45, 62, 0.95) 0%, rgba(29, 45, 62, 0.7) 100%), url('fondo-hero.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -116,7 +117,10 @@
             <div class="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10 relative">
                 <!-- Imagen del abogado con un fondo decorativo sutil -->
                 <div class="absolute inset-0 bg-navy-900 w-3/4 h-full transform translate-x-4 translate-y-4 -z-10"></div>
-                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Abogado Principal" class="w-full h-auto shadow-lg z-10 relative">
+                
+                <!-- CAMBIO 2: Aquí se cambia la etiqueta <img> por tu archivo JPEG local -->
+                <img src="foto-promesa.jpeg" alt="Socio Fundador" class="w-full h-auto shadow-lg z-10 relative object-cover">
+            
             </div>
             <div class="md:w-1/2 md:pl-10">
                 <h3 class="font-serif text-3xl md:text-4xl text-navy-900 font-bold mb-6">¡Nuestra Promesa!</h3>
